@@ -44,8 +44,32 @@ RUN echo "\n. \$HOME/.asdf/asdf.sh" >> ~/.zshrc
 
 # Install ASDF NodeJS
 RUN /bin/zsh -i -c "asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
+# FOR ERLANG https://github.com/asdf-vm/asdf-erlang?tab=readme-ov-file#ubuntu-2004-lts
+RUN apt-get update && \
+  apt-get -y install \
+  autoconf \
+  m4 \
+  libncurses5-dev \
+  libwxgtk3.0-gtk3-dev \
+  libwxgtk-webview3.0-gtk3-dev \
+  libgl1-mesa-dev \
+  libglu1-mesa-dev \
+  libpng-dev \
+  libssh-dev \
+  unixodbc-dev \
+  xsltproc \
+  fop \
+  xsltproc \
+  libxml2-utils \
+  libncurses-dev \
+  openjdk-11-jdk
 
-COPY ./asdf-node/.tool-versions /root/.tool-versions
+RUN /bin/zsh -i -c "asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git"
+
+# ELIXIR DEPENDENCIES - https://github.com/asdf-vm/asdf-elixir?tab=readme-ov-file#install (unzip)
+RUN /bin/zsh -i -c "asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git"
+
+COPY ./asdf-elixir/.tool-versions /root/.tool-versions
 
 # ASDF Install All
 RUN /bin/zsh -i -c "asdf install"

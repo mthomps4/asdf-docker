@@ -45,7 +45,27 @@ RUN echo "\n. \$HOME/.asdf/asdf.sh" >> ~/.zshrc
 # Install ASDF NodeJS
 RUN /bin/zsh -i -c "asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
 
-COPY ./asdf-node/.tool-versions /root/.tool-versions
+# ASDF RUBY DEPENDENCIES - https://github.com/rbenv/ruby-build/wiki#ubuntudebianmint
+RUN apt-get update && \
+  apt-get -y install \
+  autoconf \
+  patch \
+  rustc \
+  libssl-dev \
+  libyaml-dev \
+  libreadline6-dev \
+  zlib1g-dev \
+  libgmp-dev \
+  libncurses5-dev \
+  libffi-dev \
+  libgdbm6 \
+  libgdbm-dev \
+  libdb-dev \
+  uuid-dev
+
+RUN /bin/zsh -i -c "asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git"
+
+COPY ./asdf-ruby/.tool-versions /root/.tool-versions
 
 # ASDF Install All
 RUN /bin/zsh -i -c "asdf install"

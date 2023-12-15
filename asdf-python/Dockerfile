@@ -45,7 +45,25 @@ RUN echo "\n. \$HOME/.asdf/asdf.sh" >> ~/.zshrc
 # Install ASDF NodeJS
 RUN /bin/zsh -i -c "asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
 
-COPY ./asdf-node/.tool-versions /root/.tool-versions
+# PYTHON DEPENDENCIES - https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+RUN apt-get update && \
+  apt-get -y install \
+  libssl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libncursesw5-dev \
+  xz-utils \
+  tk-dev \
+  libxml2-dev \
+  libxmlsec1-dev \
+  libffi-dev \
+  liblzma-dev
+
+RUN /bin/zsh -i -c "asdf plugin-add python"
+
+COPY ./asdf-python/.tool-versions /root/.tool-versions
 
 # ASDF Install All
 RUN /bin/zsh -i -c "asdf install"
