@@ -43,7 +43,7 @@ Now, your Docker image is available on Docker Hub and can be used in your develo
 
 In your Visual Studio Code project, create or update the .devcontainer/devcontainer.json file to reference the Docker image:
 
-```json
+```jsonc
 {
   "name": "My Dev Container",
   "image": "mthomsp4/node-devcontainer:0.1",
