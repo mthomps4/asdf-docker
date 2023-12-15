@@ -9,7 +9,7 @@ To build the Docker image, use the following command(s) from root:
 > NODE EXAMPLE
 
 ```bash
-docker build -t mthomps4/node-devcontainer:latest -f asdf-node/Dockerfile .
+docker build -t mthomps4/devcontainer-node:latest -f asdf-node/Dockerfile .
 ```
 
 This command tags the image with `:latest`. You can replace your-username with your Docker Hub username and use any versioning strategy that suits your project.
@@ -17,7 +17,7 @@ This command tags the image with `:latest`. You can replace your-username with y
 ## Testing the build
 
 ```bash
-docker run -it mthomps4/node-devcontainer:latest
+docker run -it mthomps4/devcontainer-node:latest
 ```
 
 ## Pushing the Docker Image to Docker Hub
@@ -31,8 +31,8 @@ docker login
 Once logged in, push the image to Docker Hub with the following commands:
 
 ```bash
-docker push mthomps4/node-devcontainer:latest
-docker push mthomsp4/node-devcontainer:0.1
+docker push mthomps4/devcontainer-node:latest
+docker push mthomsp4/devcontainer-node:0.1
 ```
 
 These commands push the specified tags to the Docker Hub registry. You can choose to push specific versions or use the :latest tag for the most recent version.
@@ -46,7 +46,7 @@ In your Visual Studio Code project, create or update the .devcontainer/devcontai
 ```jsonc
 {
   "name": "My Dev Container",
-  "image": "mthomsp4/node-devcontainer:0.1",
+  "image": "mthomsp4/devcontainer-node:0.1",
   // ... other configurations ...
 }
 ```
