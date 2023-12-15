@@ -58,7 +58,8 @@ RUN apt-get update && \
   libgdbm6 \
   libgdbm-dev \
   libdb-dev \
-  uuid-dev
+  uuid-dev \
+  vim
 
 RUN /bin/zsh -i -c "asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git"
 

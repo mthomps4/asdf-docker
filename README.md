@@ -54,3 +54,10 @@ In your Visual Studio Code project, create or update the .devcontainer/devcontai
 Adjust the image tag according to the version or tag you want to use in your Codespaces environment.
 
 Feel free to customize the Dockerfile to include any additional tools or configurations needed for your development environment.
+
+## Docker Repositories
+
+- Node: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-node/general>
+- Ruby: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-ruby/general>
+- Python: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-python/general>
+- Elixir/Erlang: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-elixir/general>

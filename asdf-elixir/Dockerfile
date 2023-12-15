@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Set non-interactive mode
-# ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 USER root
 
 # Install necessary tools and dependencies
@@ -14,6 +14,7 @@ RUN apt-get update && \
   zsh \
   fonts-powerline \
   sudo \
+  vim \
   unzip \
   && \
   rm -rf /var/lib/apt/lists/*
