@@ -30,8 +30,8 @@ RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTO
 RUN git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Copy Zsh configuration
-COPY .zshrc /root/.zshrc
-COPY .p10k.zsh /root/.p10k.zsh
+COPY ./dotfiles/.zshrc /root/.zshrc
+COPY ./dotfiles/.p10k.zsh /root/.p10k.zsh
 
 # Install FZF
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all
@@ -105,7 +105,7 @@ RUN /bin/zsh -i -c "asdf plugin add erlang https://github.com/asdf-vm/asdf-erlan
 # ELIXIR DEPENDENCIES - https://github.com/asdf-vm/asdf-elixir?tab=readme-ov-file#install (unzip)
 RUN /bin/zsh -i -c "asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git"
 
-COPY .tool-versions /root/.tool-versions
+COPY ./asdf-devbox/.tool-versions /root/.tool-versions
 RUN /bin/zsh -i -c "asdf install"
 
 # Set the working directory
