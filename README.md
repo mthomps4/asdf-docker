@@ -67,3 +67,10 @@ You can create another user as you see fit.
 - Ruby: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-ruby/general>
 - Python: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-python/general>
 - Elixir/Erlang: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-elixir/general>
+
+## TODO 
+- Post Install Script (if .tool-versions run asdf install)
+- Fuller devcontainer.json examples 
+  - Workspace Folder examples
+  - Fuller Extensions examples 
+- Connecting to forwarded Postgres 

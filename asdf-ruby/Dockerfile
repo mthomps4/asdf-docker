@@ -48,6 +48,9 @@ RUN echo "\n. \$HOME/.asdf/asdf.sh" >> ~/.zshrc
 # Install ASDF NodeJS
 RUN /bin/zsh -i -c "asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
 
+# Install Redis Plugin 
+RUN /bin/zsh -i -c "asdf plugin-add redis https://github.com/smashedtoatoms/asdf-redis.git"
+
 # ASDF RUBY DEPENDENCIES - https://github.com/rbenv/ruby-build/wiki#ubuntudebianmint
 RUN apt-get update && \
   apt-get -y install \
@@ -64,6 +67,7 @@ RUN apt-get update && \
   libgdbm6 \
   libgdbm-dev \
   libdb-dev \
+  libpq-dev \
   uuid-dev
 
 RUN /bin/zsh -i -c "asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git"
