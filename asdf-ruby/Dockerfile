@@ -15,6 +15,8 @@ RUN apt-get update && \
   fonts-powerline \
   sudo \
   vim \
+  postgresql \
+  postgresql-contrib \
   unzip \
   && \
   rm -rf /var/lib/apt/lists/*

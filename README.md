@@ -55,6 +55,12 @@ Adjust the image tag according to the version or tag you want to use in your Cod
 
 Feel free to customize the Dockerfile to include any additional tools or configurations needed for your development environment.
 
+## Postgres
+Each image has `posgresql postgresql-contrib` installed. 
+There is also an alias `start-postgres` to run `service postgresql start`.
+Currently, there's only the initial postgres user `sudo -u postgres psql`.
+You can create another user as you see fit. 
+
 ## Docker Repositories
 
 - Node: <https://hub.docker.com/repository/docker/mthomps4/devcontainer-node/general>

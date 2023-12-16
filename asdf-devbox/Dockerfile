@@ -12,6 +12,9 @@ RUN apt-get update && \
   git \
   curl \
   zsh \
+  vim \
+  postgresql \
+  postgresql-contrib \
   fonts-powerline \
   sudo \
   unzip \
